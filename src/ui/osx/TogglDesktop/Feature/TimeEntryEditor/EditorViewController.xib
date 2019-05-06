@@ -9,6 +9,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="EditorViewController" customModule="TogglDesktop" customModuleProvider="target">
             <connections>
+                <outlet property="arrowBtn" destination="Qzj-M9-zrp" id="lL3-wn-eZX"/>
                 <outlet property="billableCheckBox" destination="vpV-Av-rbR" id="7vp-xl-qrd"/>
                 <outlet property="closeBtn" destination="FXR-Ha-kYg" id="nra-rB-rRw"/>
                 <outlet property="datePickerView" destination="PKt-Ig-fee" id="DN1-Wa-zOJ"/>
@@ -17,7 +18,7 @@
                 <outlet property="deleteBtn" destination="5ym-is-B1S" id="cBg-gL-hqJ"/>
                 <outlet property="descriptionTextField" destination="EMT-i8-OD1" id="PN4-q1-PU7"/>
                 <outlet property="durationTextField" destination="q9U-uY-bOj" id="5BU-6G-OFq"/>
-                <outlet property="endAtTextField" destination="8yt-KD-lKA" id="dhz-oD-1u7"/>
+                <outlet property="endAtBtn" destination="cMP-1U-V8c" id="aAa-YZ-pZ2"/>
                 <outlet property="nextDateBtn" destination="kZS-XS-SCf" id="I7K-7w-GmO"/>
                 <outlet property="previousDateBtn" destination="2eM-xR-ruv" id="Nlx-ay-1OZ"/>
                 <outlet property="projectBox" destination="HK8-ig-0Mv" id="Dnb-C3-7iP"/>
@@ -29,6 +30,7 @@
                 <outlet property="tagInputContainerView" destination="sts-eu-78s" id="Xu1-2S-B1m"/>
                 <outlet property="tagStackView" destination="qgG-HS-MvE" id="aDQ-6D-KtU"/>
                 <outlet property="tagTextField" destination="aeq-aC-W8G" id="ZA7-lD-iQX"/>
+                <outlet property="timeContainerView" destination="Wyt-sv-sZR" id="cP8-2r-wMA"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -417,7 +419,7 @@
                             <customView horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Wyt-sv-sZR">
                                 <rect key="frame" x="118" y="159" width="134" height="18"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RVA-mP-NNZ" customClass="CursorButton" customModule="TogglDesktop" customModuleProvider="target">
+                                    <button horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="RVA-mP-NNZ" customClass="CursorButton" customModule="TogglDesktop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="53" height="18"/>
                                         <buttonCell key="cell" type="bevel" title="09:10" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="skM-45-OT0">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -437,24 +439,26 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                     </button>
-                                    <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8yt-KD-lKA">
-                                        <rect key="frame" x="79" y="0.0" width="57" height="18"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="09:90" id="m0O-Wy-5Cq">
+                                    <button horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="cMP-1U-V8c" customClass="CursorButton" customModule="TogglDesktop" customModuleProvider="target">
+                                        <rect key="frame" x="81" y="0.0" width="53" height="18"/>
+                                        <buttonCell key="cell" type="bevel" title="09:10" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="l6N-68-gVg">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system" size="14"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="endAtBtnOnTap:" target="-2" id="Bw7-Hp-gnd"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="cMP-1U-V8c" firstAttribute="leading" secondItem="Qzj-M9-zrp" secondAttribute="trailing" constant="8" id="KgO-d1-qwc"/>
                                     <constraint firstItem="RVA-mP-NNZ" firstAttribute="leading" secondItem="Wyt-sv-sZR" secondAttribute="leading" id="UdO-Fg-Wjf"/>
-                                    <constraint firstItem="8yt-KD-lKA" firstAttribute="centerY" secondItem="Wyt-sv-sZR" secondAttribute="centerY" id="X35-5m-D1h"/>
+                                    <constraint firstItem="cMP-1U-V8c" firstAttribute="centerY" secondItem="Wyt-sv-sZR" secondAttribute="centerY" id="WqP-Lb-mT3"/>
                                     <constraint firstItem="Qzj-M9-zrp" firstAttribute="leading" secondItem="RVA-mP-NNZ" secondAttribute="trailing" constant="8" id="Ys9-9x-7tc"/>
                                     <constraint firstItem="Qzj-M9-zrp" firstAttribute="centerY" secondItem="Wyt-sv-sZR" secondAttribute="centerY" id="Yv3-H6-73l"/>
-                                    <constraint firstAttribute="trailing" secondItem="8yt-KD-lKA" secondAttribute="trailing" id="c64-TO-ec9"/>
                                     <constraint firstItem="Qzj-M9-zrp" firstAttribute="centerX" secondItem="Wyt-sv-sZR" secondAttribute="centerX" id="cp2-Hj-ubz"/>
-                                    <constraint firstItem="8yt-KD-lKA" firstAttribute="leading" secondItem="Qzj-M9-zrp" secondAttribute="trailing" constant="8" id="f9h-mC-tDV"/>
                                     <constraint firstItem="RVA-mP-NNZ" firstAttribute="centerY" secondItem="Wyt-sv-sZR" secondAttribute="centerY" id="oWn-dD-1gY"/>
+                                    <constraint firstAttribute="trailing" secondItem="cMP-1U-V8c" secondAttribute="trailing" id="wug-P9-UUu"/>
                                 </constraints>
                             </customView>
                         </subviews>
