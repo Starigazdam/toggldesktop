@@ -23,7 +23,7 @@
                 <outlet property="projectBox" destination="HK8-ig-0Mv" id="Dnb-C3-7iP"/>
                 <outlet property="projectDotImageView" destination="gFc-aw-iMX" id="BEl-Tj-c8T"/>
                 <outlet property="projectTextField" destination="Doe-dQ-82A" id="cgo-cM-Mbh"/>
-                <outlet property="startAtTextField" destination="bCC-ON-SgR" id="cIO-X2-PfF"/>
+                <outlet property="startAtBtn" destination="RVA-mP-NNZ" id="Aya-oK-0bY"/>
                 <outlet property="tagAddButton" destination="fzH-q2-m3a" id="Z2u-zq-e9e"/>
                 <outlet property="tagAutoCompleteContainerView" destination="mUe-Xn-xvP" id="cvg-Ii-7IT"/>
                 <outlet property="tagInputContainerView" destination="sts-eu-78s" id="Xu1-2S-B1m"/>
@@ -417,14 +417,16 @@
                             <customView horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Wyt-sv-sZR">
                                 <rect key="frame" x="118" y="159" width="134" height="18"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="bCC-ON-SgR">
-                                        <rect key="frame" x="-2" y="0.0" width="57" height="18"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="09:90" id="XRL-p8-r7I">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RVA-mP-NNZ" customClass="CursorButton" customModule="TogglDesktop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="53" height="18"/>
+                                        <buttonCell key="cell" type="bevel" title="09:10" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="skM-45-OT0">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system" size="14"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="startBtnOnTap:" target="-2" id="ZhX-g3-u3w"/>
+                                        </connections>
+                                    </button>
                                     <button horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Qzj-M9-zrp">
                                         <rect key="frame" x="61" y="6" width="12" height="7"/>
                                         <constraints>
@@ -445,14 +447,14 @@
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="bCC-ON-SgR" firstAttribute="leading" secondItem="Wyt-sv-sZR" secondAttribute="leading" id="H44-FA-ZoZ"/>
-                                    <constraint firstItem="bCC-ON-SgR" firstAttribute="centerY" secondItem="Wyt-sv-sZR" secondAttribute="centerY" id="NYP-Pe-1LG"/>
+                                    <constraint firstItem="RVA-mP-NNZ" firstAttribute="leading" secondItem="Wyt-sv-sZR" secondAttribute="leading" id="UdO-Fg-Wjf"/>
                                     <constraint firstItem="8yt-KD-lKA" firstAttribute="centerY" secondItem="Wyt-sv-sZR" secondAttribute="centerY" id="X35-5m-D1h"/>
+                                    <constraint firstItem="Qzj-M9-zrp" firstAttribute="leading" secondItem="RVA-mP-NNZ" secondAttribute="trailing" constant="8" id="Ys9-9x-7tc"/>
                                     <constraint firstItem="Qzj-M9-zrp" firstAttribute="centerY" secondItem="Wyt-sv-sZR" secondAttribute="centerY" id="Yv3-H6-73l"/>
                                     <constraint firstAttribute="trailing" secondItem="8yt-KD-lKA" secondAttribute="trailing" id="c64-TO-ec9"/>
                                     <constraint firstItem="Qzj-M9-zrp" firstAttribute="centerX" secondItem="Wyt-sv-sZR" secondAttribute="centerX" id="cp2-Hj-ubz"/>
                                     <constraint firstItem="8yt-KD-lKA" firstAttribute="leading" secondItem="Qzj-M9-zrp" secondAttribute="trailing" constant="8" id="f9h-mC-tDV"/>
-                                    <constraint firstItem="Qzj-M9-zrp" firstAttribute="leading" secondItem="bCC-ON-SgR" secondAttribute="trailing" constant="8" id="ypF-88-iGW"/>
+                                    <constraint firstItem="RVA-mP-NNZ" firstAttribute="centerY" secondItem="Wyt-sv-sZR" secondAttribute="centerY" id="oWn-dD-1gY"/>
                                 </constraints>
                             </customView>
                         </subviews>
