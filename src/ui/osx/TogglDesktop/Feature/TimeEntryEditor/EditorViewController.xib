@@ -226,6 +226,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="billableCheckBoxOnChange:" target="-2" id="Mm6-vv-0Up"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="veq-fR-isT">
                                 <rect key="frame" x="8" y="53" width="132" height="16"/>
@@ -251,6 +254,9 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <color key="contentTintColor" name="error-title-color"/>
+                                            <connections>
+                                                <action selector="deleteBtnOnTap:" target="-2" id="ZiB-tM-bVk"/>
+                                            </connections>
                                         </button>
                                         <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="unD-T8-stz">
                                             <rect key="frame" x="0.0" y="43" width="266" height="5"/>
