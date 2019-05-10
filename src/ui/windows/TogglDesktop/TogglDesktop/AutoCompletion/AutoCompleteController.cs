@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -303,7 +304,7 @@ namespace TogglDesktop.AutoCompletion
 
             foreach (string word in words)
             {
-                if (itemText.IndexOf(word, StringComparison.OrdinalIgnoreCase) == -1)
+                if (!ComplexContains(itemText, word))
                 {
                     return false;
                 }
@@ -311,6 +312,12 @@ namespace TogglDesktop.AutoCompletion
             return true;
         }
 
+        private static bool ComplexContains(string text, string word)
+        {
+            // case-insensitive, accent-insensitive
+            var ci = CultureInfo.CurrentCulture.CompareInfo;
+            return ci.IndexOf(text, word, CompareOptions.IgnoreNonSpace | CompareOptions.IgnoreCase) != -1;
+        }
 
         public void RefreshVisibleList()
         {
